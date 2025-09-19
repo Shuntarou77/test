@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="_23_1940LoreñoZZZ.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - ZZZ </title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <style>
+        :root {
+            --zzz-primary: #1a1a2e;
+            --zzz-secondary: #16213e;
+            --zzz-accent: #0f3460;
+            --zzz-gold: #e94560;
+            --zzz-text: #ffffff;
+            --zzz-text-secondary: #b8b8b8;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--zzz-primary) 0%, var(--zzz-secondary) 100%);
+            color: var(--zzz-text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .navbar {
+            background: rgba(26, 26, 46, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--zzz-gold);
+        }
+        
+        .navbar-brand {
+            color: var(--zzz-gold) !important;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--zzz-text) !important;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--zzz-gold) !important;
+        }
+        
+        .container.body-content {
+            background: rgba(15, 52, 96, 0.1);
+            border-radius: 15px;
+            margin-top: 20px;
+            padding: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(233, 69, 96, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--zzz-text-secondary);
+            border-top: 1px solid rgba(233, 69, 96, 0.3);
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            background: var(--zzz-gold);
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #d13a4f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" runat="server" href="~/WebPages/Homepage">Zenless Zone Zero</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/Homepage">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/About">About</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/Agents">Agents</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/Factions">Factions</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/WEngines">W‑Engines</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/Bangboo">Bangboo</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/DriveDiscs">Drive Discs</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/Enemies">Enemies</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/WebPages/News">News</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Zenless Zone Zero Fan Site</p>
+            </footer>
+        </div>
+    </form>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
